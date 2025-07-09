@@ -1,0 +1,22 @@
+<?php
+    if (isset($flash['success'])) {
+        foreach ($flash['success'] as $message) {
+            print_r($message);
+        }
+    }
+?>
+<form action="/login" method="post">
+    <label>
+        Логин
+        <input type='text' name="login" value="<?= htmlspecialchars($login ?? "") ?>">
+        <?= $errors['login'] ?? ""?>
+    </label>
+    <p> 
+    <label>
+        Пароль
+        <input type='password' name="password">
+        <?= $errors['password'] ?? ""?>
+    </label>
+    <p> 
+    <input type="submit" value="Вход">
+</form>

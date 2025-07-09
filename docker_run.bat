@@ -1,0 +1,1 @@
+docker run -v ".\MOUNT:/MOUNT" -p 8000:8000 -d barsheel_php_image_v4 tail -f /dev/null

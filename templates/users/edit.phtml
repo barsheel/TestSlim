@@ -1,0 +1,24 @@
+<form action = "/users/<?=htmlspecialchars($user->getId())?>" method="post"  enctype="application/x-www-form-urlencoded">
+   <input type="hidden" name="_METHOD" value="PATCH">
+    <div>
+            <label>
+                <h1>Имя*</h1>
+                <input type="text" name="user[name]" required value="<?= htmlspecialchars($user->getName())?>"> 
+                <?= '<p>' . ($errors['name'] ?? "") . '<p>'?>
+            </label>
+    </div>
+    <div>
+            <label>
+                <h1>Электронная почта*</h1>
+                <input type="text" name="user[email]" required value="<?= htmlspecialchars($user->getEmail())?>"">
+                <?= '<p>' . ($errors['email'] ?? "") . '<p>'?>
+            </label>
+    </div>
+    <div>
+            <label>
+                <input type="submit" value="Сохранить изменения" > 
+            </label>
+    </div>
+
+</form>
+
